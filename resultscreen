@@ -1,0 +1,22 @@
+related functions ::
+  800becb0 0 AS_000_VictoryPoseB
+  800bed88 0 AS_002_VictoryPoseY
+  800bef04 0 AS_005_VictoryWinPoseX
+  800be7e0 0 VictoryPose_Decide
+  800e0d1c 0 AS_002_VictoryPose_RNG
+  80160400 0 GetVictoryTheme
+  80177368 VictoryScreen_Init
+  8017aa78 VictoryScreen_InitScene
+  8017a9b4 VictoryScreen_SetupRenderTarget
+  80179350 VictoryScreen_Think
+
+804862d0
+80480000 - 62d0
+
+041BFA20 38600002
+
+InitOnlinePlay.asm 
+L#322 Report game results
+L#364 Output the game end method and lras intitiator
+
+Victory Pose screen is called ResultScreen in all modes but in vs mode it has victory poses

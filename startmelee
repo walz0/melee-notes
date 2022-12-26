@@ -1,0 +1,24 @@
+RandomStage function from Salty Runback code [Dan Salvato, UnclePunch]
+
+RandomStage:
+  branchl r12,0x802599EC #get random stage ID
+
+#convert SSS ID to internal stage ID
+  load r4,0x803f06D0   #load stage ID table
+  mulli	r3, r3, 28     #stage ID to offset
+  add r4,r4,r3         #add to start of table
+  lbz r3,0xB(r4)       #get internal stage ID
+#Store to match struct
+  load r4,0x8045AC64     #load VS match struct
+  sth r3,0x2(r4)             #store stage half to struct
+#Store to preload table
+  load r4,0x8043207c         #Preload Cache
+  stw r3,0xC(r4)             #Store to Preload Cache
+#Request Load
+  branchl r12,0x80018254
+
+  li r27,0x2                  #reload match scene
+  b exit
+
+this function runs at the end of a match so no guarrantees it works
+arbitrarily

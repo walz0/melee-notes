@@ -1,0 +1,8 @@
+common functions ::
+    80479d30 (scene controller)
+    801a42a0 Scene_SetMinorPending (byte minor)
+    801bf9a8 BootScene_Exit (byte major)
+    8045ac58 StartMelee Struct
+
+Data Structures ::
+    PlayerInitData : Length 36
