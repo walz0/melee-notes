@@ -1,0 +1,34 @@
+HSD_GObjPlayer
+0x0 - 0x01 classifier
+0x2	    p_link
+0x3	    gx_link
+0x4	    p_priority
+0x5         render_priority
+0x6	    obj_kind
+0x7	    user_data_kind
+0x8-0xB	    next
+0xC-0xF	    prev
+0x10-0x13   next_gx
+0x14-0x17   prev_gx
+0x18-0x1A   proc
+0x1B-0x1D 
+
+Example HSD_GObjPlayer for VictoryWinPoseX
+0004			    classifier
+08			        p_link
+05			        gx_link
+00			        p_priority
+00			        render_priority
+03			        obj_kind
+04			        user_data_kind
+00000000		    next
+80cd2f60		    prev
+00000000		    next_gx
+80cd2f60		    prev_gx
+80d820a0		    proc
+80080e18		    render_cb
+0000000000000000	gxlink_prios
+80d21c80		    hsd_obj
+80d38620		    data
+8006dabc		    user_data_remove_func
+80d27de0		    unk

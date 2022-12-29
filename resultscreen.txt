@@ -1,0 +1,74 @@
+related functions ::
+  800becb0 AS_000_VictoryPoseB
+  800bed88 AS_002_VictoryPoseY
+  800bef04 AS_005_VictoryWinPoseX
+  800be7e0 HSD_GObj VictoryPose_Decide(CID *parma_1) ***
+  800e0d1c AS_002_VictoryPose_RNG
+  80160400 GetVictoryTheme
+  80177368 VictoryScreen_Init
+  8017aa78 VictoryScreen_InitScene
+  8017a9b4 VictoryScreen_SetupRenderTarget
+  80179350 VictoryScreen_Think
+  80178050 ResultsScreen_CheckButtonPresses
+  80160400 GetCharacterVictoryTheme
+  80301420 DebugMenu_ResultTest
+  8038bb9c SSM_InitPlayStruct
+
+***
+Add RstScreen struct to Slippi Minor Scene Struct in main.asm
+Line 41 InitOnlinePlay.asm sets ranked minor scene data for game prep
+***
+
+804862d0
+80480000 - 62d0
+
+041BFA20 38600002
+
+InitOnlinePlay.asm 
+L#322 Report game results
+L#364 Output the game end method and lras intitiator
+
+Victory Pose screen is called ResultScreen in all modes but in vs mode it has victory poses
+
+VictoryPose_Decide
+  - The Winner of the match gets initialized first
+
+SFX ::
+  Functions ::
+    GetCharacterVictoryTheme(int kind)
+    SFX_PlayAnnouncerSFX
+    SFX_PlayMusic
+    SFX_PlaySFX
+  Files ::
+    nr_vs05.dsp.wav (This game's winner is...)
+
+FGMGROUP_ANNOUNCER ::
+  nr_vs05.dsp
+FGMGROUP_PERSIST ::
+  nr_name00.dsp
+  ...
+
+GmRst.dat struct
+
+flmsce - likely the character animations
+
+pnlsce - all ui elements
+  JOBJ_Descs
+    Array_0
+      RootJoint - set of ui bones
+      JointAnimations - set of anims
+      MaterialAnimations - set of texture anims for char icons / names
+
+Files ::
+  Series Icons :: pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_17.child_3.MaterialAnimation.TextureAnimation
+  Char Names :: pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_12.child_1.MaterialAnimation.TextureAnimation
+          pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_11.child_1.MaterialAnimation.TextureAnimation
+          pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_10.child_1.MaterialAnimation.TextureAnimation
+          pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_9.child_1.MaterialAnimation.TextureAnimation
+          
+  Char Icons :: pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_8.MaterialAnimation_1.TextureAnimation
+          pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_7.MaterialAnimation_1.TextureAnimation
+          pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_6.MaterialAnimation_1.TextureAnimation
+          pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child_5.MaterialAnimation_1.TextureAnimation
+
+  Winner Icon :: pnlsce.JOBJDescs.Array_0.MaterialAnimations.Array_0.child.child.MaterialAnimation.TextureAnimation
